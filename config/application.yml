@@ -5,6 +5,7 @@ logging:
   level:
     org.springframework: INFO
     com.mkyong: DEBUG
+    jdbc: DEBUG
 
 spring:
   cloud:
@@ -14,3 +15,17 @@ spring:
     active: fsa23
   main:
     banner-mode: log
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://MYDBURLHERE:3306/mydbnamehere
+    username: "dbadmin@mydbnamehere"
+    password: "<SECRETPASSWORDCOMESHERE>"
+    hikari:
+      # default-time-zone: '+01:00'
+      data-source-properties:
+        serverTimezone: "GMT"
+        useSSL: false
+    # driver-class-name: com.mysql.cj.jdbc.Driver
